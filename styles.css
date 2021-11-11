@@ -1,0 +1,176 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* reseteo x defecto */
+:root{
+    --Bright-orange: hsl(31, 77%, 52%);
+    --Dark-cyan: hsl(184, 100%, 22%);
+    --Very-dark-cyan: hsl(179, 100%, 13%);
+    --Transparent-white: hsla(0, 0%, 100%, 0.75); /* (paragraphs)*/
+    --Very-light-gray: hsl(0, 0%, 95%); /*(background, headings, buttons)*/
+    --Big-Shoulders:'Big Shoulders Display', cursive;
+    --Lexend-Deca: 'Lexend Deca', sans-serif;
+/* creo las variables de colores y fuentes de letras que vamos a usar */
+}
+/* DISEÑO PARA MOBILE FIRST */
+.flex-container{
+    display: flex;
+    /* creo un flex para nuestro contenedor padre */
+    justify-content: center;
+    align-items: center;
+    /* acomodo los elementos al centro, en el eje X y en el Y */
+    margin: 2em 0;
+    /* le doy un margen de 2em top y bottom, y de 0 left y right */
+}
+.cards{
+    color: var(--Very-light-gray);
+    /* le doy un fondo al contenedor de las tarjetas */
+    margin: 0 1em;
+    /* le dooy un margen de 0 top y bottom, y de 1em left y right */
+    max-width: 375px;
+    /* le digo que el maximo ancho que va a tener es de 375px, para dispositivo movil */
+}
+.card__1 {
+    width: 100%;
+    /* le digo que tome el 100% del ancho de la pantalla */
+    min-height: 240px;
+    /* le digo que la altura minima que va a tener es de 15rem */
+    padding-top: 2.5em;
+    /* le doy un padding arriba para despegar de los costados  */
+    padding-left: 3em;
+    /* le doy un padding a la izquierda para que se separe a la altura de la tarjeta original */
+    background-color: var(--Bright-orange);
+    /* le doy el color a la tarjeta llamando con la variable */
+    border-radius: .5em .5em 0 0;
+    /* le doy un borde redondeado de 1em arriba y la izquierda y de 0 abajo y a la derecha */
+}
+.card__2 {
+    width: 100%;
+    /* le digo que tome el 100% del ancho de la pantalla */
+    min-height: 15em;
+    /* le digo que la altura minima que va a tener es de 15rem */
+    padding-top: 2.5em;
+    /* le doy un padding arriba para despegar de los costados  */
+    padding-left: 3em;
+    /* le doy un padding a la izquierda para que se separe a la altura de la tarjeta original */
+    background-color: var(--Dark-cyan);
+    /* le doy el color a la tarjeta llamando con la variable */
+}
+.card__3 {
+    width: 100%;
+    /* le digo que tome el 100% del ancho de la pantalla */
+    min-height: 15em;
+    /* le digo que la altura minima que va a tener es de 15rem */
+    padding-top: 2.5em;
+    /* le doy un padding arriba para despegar de los costados  */
+    padding-left: 3em;
+    /* le doy un padding a la izquierda para que se separe a la altura de la tarjeta original */
+    background-color: var(--Very-dark-cyan);
+    /* le doy el color a la tarjeta llamando con la variable */
+    border-radius: 0em 0em .5em .5em;
+    /* le doy un borde redondeado de 1em arriba y la izquierda y de 0 abajo y a la derecha */
+}
+.title {
+    font-family: 'Big Shoulders Display', cursive;
+    /* le doy la fuente al H2 */
+    margin-top: 0.625rem;
+    /* le doy un margen arriba */
+    margin-bottom: 1em;
+    /* le di un margen de abajo al titulo */
+    
+}
+.text {
+    font-family: 'Lexend Deca', sans-serif;
+    /* le doy fuente al parrafo */
+    text-align: left;
+    /* alineo el parrafo a la izquierda */
+    padding-right: 4em;
+    /* le doy un padding a la derecha */
+    font-size: 15px;
+    /* le doy fuente a la letra */
+    color: var(--Transparent-white);
+    /* le doy color a las letras del parrafo */
+    line-height: 1.7em;
+    /* le doy una altura, a las letras del parrafo */
+}
+
+.card-btn{
+    border: none;
+    /* le saco el borde al boton */
+    width: 9em;
+    /* le doy un ancho a la tarjeta */
+    height: 3em;
+    /* le doy una altura al tarjeta */
+    border-radius: 10em;
+    /* le doy el redondeo a las puntas de la tarjeta */
+    margin-top: 1.5em;
+    /* le doy un margen superior */
+    margin-bottom: 2.1em;
+    /* le doy un margen inferior */
+}
+.btn-1 {
+    color: var(--Bright-orange);
+    /* le doy el color a la tarjeta */
+}
+.btn-2{
+    color: var(--Dark-cyan);
+    /* le doy el color a la tarjeta  */
+}
+.btn-3 {
+    color: var(--Dark-cyan);
+    /* le doy el color a la tarjeta  */
+}
+
+/* EMPIEZO CON LOS CAMBIOS EN MEDIA QUERY PARA ADAPTARLO A DESKTOP */
+
+@media (min-width:1440px) {
+    .cards {
+        max-width: 1100px;
+        /* le doy un ancho maximo a las tarjetas */
+        display: flex;
+        /* le doy flex a la caja contenedora */
+        flex-direction: row;
+        /* le digo que los elementos se posicionen en fila */
+        align-items: center;
+        justify-content: center;
+        /* alineo los elementos al centro con estas 2 proppiedades, en los eje X / Y */
+    }
+    .card__1 {
+        border-radius: .5em 0em 0em .5em;
+        /* le doy un el redondeo a las esquinas de la tarjeta */
+        min-height: 35em;
+        /* le doy una altura minima */
+    }
+    .card__2 {
+        min-height: 35em;
+        /* le doy una altura minima */
+    }
+    .card__3 {
+        border-radius: 0em .5em .5em 0em;
+        /* le doy un el redondeo a las esquinas de la tarjeta */
+        min-height: 35em;
+        /* le doy una altura minima */
+    }
+    .text {
+        font-size: 1rem;
+        /* le doy eltamaño de la letra al parrafo */
+        height: 17rem;
+        /* le doy un alto al parrrafo */
+    }
+    .title {
+        margin-top: 1.9em;
+        /* le doy margen superior al h2 */
+        font-size: 2rem;
+        /* le doy el tamaño al h2 */
+    }
+    .card-btn {
+        margin-bottom: 2.5em;
+        /* a las tarjetas le doy un maargen inferior */
+        width: 10em;
+        /* le doy un ancho a las tarjetas */
+    }
+}
+
